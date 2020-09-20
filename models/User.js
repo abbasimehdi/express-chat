@@ -24,4 +24,12 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+userSchema.statics.getUserByIds = async function (ids) {
+  try {
+    const users = await this.find({ _id: { $in: ids } });
+    return users;
+  } catch (error) {
+    throw error;
+  }
+}
 export default mongoose.model("User", userSchema);
