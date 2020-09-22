@@ -49,6 +49,6 @@ global.io.on('connection', WebSockets.connection)
 /** Listen on provided port, on all network interfaces. */
 server.listen(port);
 /** Event listener for HTTP server "listening" event. */
-server.on("listening", () => {
+server.on("listening", () =>  {
   console.log(`Listening on port:: http://localhost:${port}/`)
 });
